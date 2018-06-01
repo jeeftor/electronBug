@@ -1,3 +1,17 @@
+# How to find the bug
+
+* `npm start`
+* Open DevTools
+* Navigate the survey application
+
+![1.png](1.png)
+
+![2.png](2.png)
+
+![3.png](3.png)
+
+
+
 # electron-quick-start
 
 **Clone and run for a quick way to see Electron in action.**

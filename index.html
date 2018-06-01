@@ -35,7 +35,7 @@
     })
 
     webview.addEventListener('found-in-page', (e) => {
- console.log('Detected ', e.result.matches, ' instances of the search term')
+ console.log('Detected ', e.result.matches, ' instances of the search term: T')
  webview.stopFindInPage('clearSelection')
     })
     }
