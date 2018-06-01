@@ -5,39 +5,40 @@
     <title>Hello World!</title>
   </head>
   <body>
-  <webview id="webview" src="https://www.questionpro.com/t/ALHMVZcLXK" style="width:100vw; height:100vh"></webview>
+
+    <webview id="webview" src="https://www.questionpro.com/t/ALHMVZcLXK" style="width:100vw; height:100vh"></webview>
 
     <script>
-      // You can also require other files to run in this process
-      require('./renderer.js')
+    // You can also require other files to run in this process
+    require('./renderer.js')
 
-      onload = () => {
-      const webview = document.querySelector('webview')
-       webview.addEventListener('load-commit', (url, isMainFrame) => {
-      console.warn(`load-commit: ${url.url}`)
-    })
-    webview.addEventListener('did-start-loading', () => {
-      console.warn('did-start-loading')
-    })
-    webview.addEventListener('did-stop-loading', () => {
-      console.warn('did-stop-loading')
-      // webview.setZoomFactor(2)
-      webview.findInPage('T')
-    })
-    webview.addEventListener('will-navigate', (url) => {
-      console.warn(`will-navigate`)
-    })
-    webview.addEventListener('did-navigate', (url) => {
-      console.warn(`did-navigate: ${url.url}`)
-    })
-    webview.addEventListener('did-navigate-in-page', (isMainFrame, url) => {
-      console.warn('did-navigate-in-page')
-    })
+    onload = () => {
+        const webview = document.querySelector('webview')
+        webview.addEventListener('load-commit', (url, isMainFrame) => {
+            console.warn(`load-commit: ${url.url}`)
+        })
+        webview.addEventListener('did-start-loading', () => {
+            console.warn('did-start-loading')
+        })
+        webview.addEventListener('did-stop-loading', () => {
+            console.warn('did-stop-loading')
+            // webview.setZoomFactor(2)
+            webview.findInPage('T')
+        })
+        webview.addEventListener('will-navigate', (url) => {
+            console.warn(`will-navigate`)
+        })
+        webview.addEventListener('did-navigate', (url) => {
+            console.warn(`did-navigate: ${url.url}`)
+        })
+        webview.addEventListener('did-navigate-in-page', (isMainFrame, url) => {
+            console.warn('did-navigate-in-page')
+        })
 
-    webview.addEventListener('found-in-page', (e) => {
- console.log('Detected ', e.result.matches, ' instances of the search term: T')
- webview.stopFindInPage('clearSelection')
-    })
+        webview.addEventListener('found-in-page', (e) => {
+            console.log('Detected ', e.result.matches, ' instances of the search term: T')
+            webview.stopFindInPage('clearSelection')
+        })
     }
     </script>
   </body>
